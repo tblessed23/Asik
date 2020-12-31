@@ -1,0 +1,169 @@
+<resources>
+    <string name="app_name">Kisa</string>
+    <!--Main Activity-->
+    <string name="browseall">Browse All</string>
+    <string name="search">Search</string>
+    <string name="welcometext">Welcome to Kisa!</string>
+    <string name="welcomedescriptiontext">Griot. Tell your ancestors stories. Tell your family stories.</string>
+
+    <!--Ads in Home Fragment-->
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
+    <!--About Us-->
+    <string name="aboutbody">Our quest to find where our roots began started in the heart of The Great Continent.
+        This is were our inspiration comes. Kisa is a Swahili word for story.
+        And we believe that our stories are the most precious, most powerful possession that we hold.</string>
+    <string name="aboutbodytwo">
+When we first embarked upon the journey of learning more about our family history.
+        One of the most intriguing findings we came upon was how information from family
+        historians was lost when they passed away. Uncles, aunts, cousins and grandparents all have riches hidden in their memories.
+        It is our belief that when we let allow these gems to be recorded and shared, that it will connect and link all of our stories together.
+        It is our hope that you will use the Kisa App to improve your genealogical experience and enhance your families historical journey from generation to generation.</string>
+
+    <!--DeleteStoryDialogFragment-->
+    <string name="dialog_delete">Are you sure you want to delete?</string>
+    <string name="delete_action">Delete</string>
+    <string name="cancel">Cancel</string>
+
+<!--EmptyState-->
+    <string name="empty_state">You have not added a recording.</string>
+
+    <!--Favorites-->
+    <string name="favorites">Favorites</string>
+    <string name="no_favorites">No favorites found. Visit My Recordings page to select your favorites.</string>
+    <string name="mark_as_favorite">Mark As Favorite</string>
+    <string name="favoritebutton">Favorite Saved</string>
+    <string name="error_log">Updating list of tasks from LiveData in ViewModel</string>
+    <string name="favorite">Favorite</string>
+    <string name="swipe_delete">swipe delete</string>
+    <string name="intent_key_stories">Stories</string>
+
+
+    <!--Home Folder-->
+    <string name="recordButton">Record Your Story</string>
+    <string name="imageHomeCD">Kisa Logo on Homepage</string>
+
+    <!---Logging In-->
+    <string name="sign_out">Sign Out</string>
+    <string name="title_activity_login_in">LoginInActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_register">Register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <!--Menu/options_menu-->
+    <string name="delete_menu">Delete</string>
+    <string name="play_menu">Play</string>
+
+
+    <!--Navigation Drawer-->
+    <string name="menu_home">Home</string>
+    <string name="home_title_page">Kisa: User Account Home</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_slideshow">My Recordings</string>
+    <string name="title_activity_user_welcome">UserWelcomeActivity</string>
+    <string name="menu_browse_title">Browse All</string>
+    <string name="menu_search_title">Search</string>
+    <string name="add_widget">Add widget</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_nav_practice">NavPracticeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Kisa</string>
+    <string name="nav_header_subtitle">admin@kisaapp.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+
+    <!--NowPlayingActivity-->
+    <string name="playing_state">City/State</string>
+    <string name="playing_county">County</string>
+    <string name="playing_fullname">Ancestor Name</string>
+    <string name="playing_familyname">Family Name</string>
+
+    <!--Search-->
+    <string name="search_button">Search</string>
+    <string name="browse_lastname">Ancestor Lastname: </string>
+
+    <!--User Main Activity-->
+    <string name="recordaudio">Record Audio</string>
+    <string name="savedaudio">Saved Audio</string>
+    <string name="edituserdetails">Edit User Details</string>
+    <string name="welcometextuser">Welcome to Kisa User!</string>
+    <string name="welcomedescriptiontextuser">Account user tools</string>
+
+    <!--UserRecordAudioActivity-->
+    <string name="startPlaying">Play</string>
+    <string name="startRecording">Record</string>
+    <string name="stop">Stop</string>
+    <string name="pause">Pause</string>
+    <string name="resume">Resume</string>
+    <string name="edit">Edit Files</string>
+    <string name="record_message">Add Additional information about your story in the My Recordings section of your account.</string>
+    <string name="saved_recording_message">*Your Recording has been saved.</string>
+
+    <!--UserEditAudioDetailsActivity-->
+    <string name="add_button">Save</string>
+    <string name="edit_task_description">Describe your taskEntry...</string>
+    <string name="update_button">Update</string>
+    <string name="edit_url">URL</string>
+
+    <!--User Saved Audio List XML-->
+    <string name="labelcounty"></string>
+    <string name="title_of_story">Title of Story:</string>
+    <string name="city_where_story_takes_place">City where story takes place:</string>
+    <string name="county_where_story_takes_place">County where story takes place:</string>
+    <string name="state_where_story_takes_place">State where story takes place:</string>
+    <string name="ancestor_firstname">Ancestor Firstname:</string>
+    <string name="ancestor_lastname">Ancestor Lastname:</string>
+    <string name="family_name">Family Name:</string>
+    <string name="editsavedaudio">Edit</string>
+    <string name="hint_state_of_story">State of Story*</string>
+    <string name="hint_title">Title*</string>
+    <string name="_00_00_00">00:00:00</string>
+    <string name="intent_key_steps_position">Steps Position</string>
+    <string name="favorite_button">Mark as Favorite</string>
+
+    <!--UserPlayAudioActivity  -->
+    <string name="detail_error_message">No story data available.</string>
+
+
+    <!---User Information-->
+    <string name="label_email">Email:</string>
+    <string name="label_firstname">Firstname:</string>
+    <string name="label_lastname">Lastname:</string>
+    <string name="label_city">City:</string>
+    <string name="label_state">State:</string>
+    <string name="label_country">Country (optional):</string>
+    <string name="label_phone">Phone:</string>
+    <string name="label_displayname">Display name displays to the public (optional):</string>
+    <string name="label_displayemail">Display Email displays to the public (optional) :</string>
+
+    <!--Validation-->
+    <string name="nameerror">Enter a valid name</string>
+
+    <!--Widget-->
+    <string name="widget_instructions">Kisa: Favorite Stories Quick Access</string>
+    <string name="appwidget_text">Kisa: Favorite Stories Quick Access</string>
+    <string name="app_label">Kisa Search</string>
+    <string name="search_hint">Search by State, City</string>
+    <string name="menu_aboutus_title">About Us</string>
+    <string name="play_audio">PLAY</string>
+    <string name="ancestor_first_name">Ancestor First Name</string>
+    <string name="ancestor_last_name">Ancestor Last Name</string>
+    <string name="family_nametwo">Family Name</string>
+    <string name="city_of_story">City of Story</string>
+    <string name="county_of_story">County of Story</string>
+    <string name="state_of_story">State of Story</string>
+    <string name="login_here">Login Here</string>
+    <string name="register_here">Register Here</string>
+    <string name="baboab_tree_in_africa">Baboab Tree in Africa</string>
+    <string name="title">Title</string>
+    <string name="kisa_logo">Kisa Logo</string>
+    <string name="you_have_not_added_a_favorite">You have not added a favorite.</string>
+
+</resources>

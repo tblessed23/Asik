@@ -1,0 +1,147 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    signingConfigs {
+        config {
+            storeFile file('C:\\Users\\BenTheonna\\Documents\\Malachi Business Solutions\\Android Developer Course\\Asik\\keystore.jks')
+            storePassword 'cs-193485'
+            keyAlias 'asiktree'
+            keyPassword 'cs-193485'
+        }
+    }
+    compileSdkVersion 28
+    buildToolsVersion "30.0.1"
+
+    defaultConfig {
+        applicationId "com.msbs.android.asik"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding{
+        enabled=true
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+
+    //Admob Test
+    implementation 'com.google.android.gms:play-services-ads:19.6.0'
+
+    //Cardview
+    implementation "androidx.cardview:cardview:1.0.0"
+
+    //Exoplayer
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.12.0'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.12.0'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.12.0'
+
+
+    //Firebase dependencies
+    implementation platform('com.google.firebase:firebase-bom:25.12.0')
+    implementation 'com.google.firebase:firebase-auth:20.0.1'
+    implementation 'com.google.firebase:firebase-storage'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-messaging'
+
+    //Material Design
+    implementation 'com.google.android.material:material:1.2.1'
+
+    //Navigation Design
+    implementation 'androidx.navigation:navigation-fragment:2.3.2'
+    implementation 'androidx.navigation:navigation-ui:2.3.2'
+
+    //Pagination
+    implementation 'android.arch.paging:runtime:2.1.0'
+
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //ProgressIndicator
+    implementation 'com.samigehi:loadingview:1.1'
+
+    // RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    //For Testing
+    androidTestImplementation 'androidx.annotation:annotation:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.3.0'
+    implementation 'androidx.test.espresso:espresso-idling-resource:3.3.0'
+    androidTestImplementation 'androidx.test:rules:1.3.0'
+    androidTestImplementation 'androidx.test:runner:1.3.0'
+    androidTestImplementation('com.android.support.test.espresso:espresso-contrib:3.0.2') {
+        exclude group: 'com.android.support', module: 'appcompat'
+        exclude module: 'recyclerview-v7'
+        exclude module: 'appcompat-v7'}
+
+    //RxJava
+    implementation "io.reactivex.rxjava3:rxjava:3.0.4"
+
+    //Room dependencies
+    def room_version = "2.2.5"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version" // For Kotlin use kapt instead of annotationProcessor
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$room_version"
+
+    // optional - RxJava support for Room
+    implementation "androidx.room:room-rxjava2:$room_version"
+
+    // optional - Guava support for Room, including Optional and ListenableFuture
+    implementation "androidx.room:room-guava:$room_version"
+
+    // Test helpers
+    testImplementation "androidx.room:room-testing:$room_version"
+
+    def lifecycle_version = "2.2.0"
+
+    // ViewModel
+    //noinspection GradleDependency
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    // LiveData
+    //noinspection GradleDependency
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+
+    // Annotation processor
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+
+    // alternately - if using Java8, use the following instead of lifecycle-compiler
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+
+    //Validate Input
+
+    implementation 'com.basgeekball:awesome-validation:4.2'
+
+}

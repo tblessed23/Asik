@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:clickable="true"
+    android:elevation="5dp"
+    android:focusable="true">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_horizontal_margin"
+        >
+
+        <TextView
+            android:id="@+id/label_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:text="@string/label_email" />
+
+        <TextView
+            android:id="@+id/user_display_email"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_gap"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="4dp"
+            android:layout_below="@id/label_email"
+            android:ellipsize="end"
+            android:maxLines="4" />
+
+        <View style="@style/Divider"/>
+
+        <TextView
+            android:id="@+id/label_firstname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_display_email"
+            android:textColor="@color/textColor"
+            android:text="@string/label_firstname" />
+
+        <TextView
+            android:id="@+id/user_display_firstname"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp"
+            android:layout_below="@id/label_firstname"
+            android:textColor="#6000"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <View style="@style/Divider"/>
+
+        <TextView
+            android:id="@+id/label_lastname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_display_firstname"
+            android:textColor="@color/textColor"
+            android:text="@string/label_lastname" />
+
+        <TextView
+            android:id="@+id/user_display_lastname"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp"
+            android:layout_below="@id/label_lastname"
+            android:textColor="#6000"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <View style="@style/Divider"/>
+
+        <TextView
+            android:id="@+id/label_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_display_lastname"
+            android:textColor="@color/textColor"
+            android:text="@string/label_city" />
+
+        <TextView
+            android:id="@+id/user_display_city"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp"
+            android:textColor="#6000"
+            android:layout_below="@id/label_city"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+
+        <TextView
+            android:id="@+id/label_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_display_city"
+            android:textColor="@color/textColor"
+            android:text="@string/label_state" />
+
+        <TextView
+            android:id="@+id/user_display_state"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp"
+            android:layout_below="@id/label_state"
+            android:textColor="#6000"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/label_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_display_state"
+            android:textColor="@color/textColor"
+            android:text="@string/label_country" />
+
+        <TextView
+            android:id="@+id/user_display_country"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp"
+            android:textColor="#6000"
+            android:layout_below="@id/label_country"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/label_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_display_country"
+            android:textColor="@color/textColor"
+            android:text="@string/label_phone" />
+
+        <TextView
+            android:id="@+id/user_display_phone"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp"
+            android:layout_below="@id/label_phone"
+            android:textColor="#6000"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <View style="@style/Divider"/>
+
+        <TextView
+            android:id="@+id/label_displayname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_below="@id/user_display_phone"
+            android:text="@string/label_displayname" />
+
+        <TextView
+            android:id="@+id/user_display_displayname"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp"
+            android:layout_below="@id/label_displayname"
+            android:textColor="#6000"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/label_displayemail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_below="@id/user_display_displayname"
+            android:text="@string/label_displayname" />
+
+        <TextView
+            android:id="@+id/user_display_displayemail"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp"
+            android:layout_below="@id/label_displayemail"
+            android:textColor="#6000"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+
+        <View style="@style/Divider"/>
+
+
+        <Button
+            android:id="@+id/edit_saved_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="64dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textColor="@color/white"
+            android:layout_below="@id/user_display_displayemail"
+            android:text="@string/editsavedaudio"/>
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+</androidx.cardview.widget.CardView>
+
