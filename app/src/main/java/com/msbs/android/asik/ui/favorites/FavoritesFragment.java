@@ -2,33 +2,23 @@ package com.msbs.android.asik.ui.favorites;
 
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.msbs.android.asik.R;
 import com.msbs.android.asik.model.AppDatabase;
 import com.msbs.android.asik.model.AppExecutors;
 import com.msbs.android.asik.model.EmptyStateRecyclerView;
 import com.msbs.android.asik.model.Favorites;
-import com.msbs.android.asik.model.Story;
-import com.msbs.android.asik.ui.recordings.SavedAudioViewModel;
-import com.msbs.android.asik.ui.recordings.SavedAudioViewModelFactory;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,7 +66,7 @@ public class FavoritesFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
 
         // Create a new adapter that takes an empty list of moviess as input
-        mAdapter = new FavoritesAdapter(getActivity(), new ArrayList<Favorites>());
+        mAdapter = new FavoritesAdapter(getActivity(), new ArrayList<>());
         recyclerView.setAdapter(mAdapter);
 
         setHasOptionsMenu(true);

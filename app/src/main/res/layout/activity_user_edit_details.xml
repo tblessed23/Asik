@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fillViewport="false">
-    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -108,7 +109,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/filledTextField6"
+            android:id="@+id/filledTextFieldPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
@@ -140,7 +141,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/filledTextField9"
+            android:id="@+id/filledTextFieldEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >

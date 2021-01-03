@@ -2,10 +2,7 @@ package com.msbs.android.asik.ui.favorites;
 
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
-
 import com.msbs.android.asik.model.AppDatabase;
-import com.msbs.android.asik.ui.recordings.SavedAudioViewModel;
-
 import org.jetbrains.annotations.NotNull;
 
 public class FavoritesActivityViewModelFactory extends ViewModelProvider.NewInstanceFactory {
@@ -26,7 +23,7 @@ public class FavoritesActivityViewModelFactory extends ViewModelProvider.NewInst
 
     @NotNull
     @Override
-    public <T extends ViewModel> T create(Class<T> modelClass) {
+    public <T extends ViewModel> T create(@NotNull Class<T> modelClass) {
         //noinspection unchecked
         return (T) new FavoritesActivityViewModel(mDb, mTaskId);
     }

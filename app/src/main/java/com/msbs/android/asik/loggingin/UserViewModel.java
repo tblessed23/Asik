@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel;
 import com.msbs.android.asik.model.AppDatabase;
 import com.msbs.android.asik.model.User;
 
-import java.util.List;
+
 
 public class UserViewModel extends ViewModel {
 

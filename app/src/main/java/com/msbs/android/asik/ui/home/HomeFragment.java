@@ -1,6 +1,8 @@
 package com.msbs.android.asik.ui.home;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,25 +11,21 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.msbs.android.asik.R;
-import com.msbs.android.asik.search.SearchActivity;
+import com.msbs.android.asik.loggingin.LoginActivity;
 import com.msbs.android.asik.ui.recordings.RecordAudioActivity;
 
 public class HomeFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
+        HomeViewModel homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
 
@@ -37,22 +35,21 @@ public class HomeFragment extends Fragment {
         // Set a click listener on that Button
         record.setOnClickListener(new View.OnClickListener() {
             // The code in this method will be executed when the Lauryn Hill songs View is clicked on.
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View view) {
                 Intent recordIntent = new Intent(getActivity(), RecordAudioActivity.class);
-                startActivity(recordIntent);
+                Bundle bundle = ActivityOptions
+                        .makeSceneTransitionAnimation(getActivity())
+                        .toBundle();
+                startActivity(recordIntent, bundle);
 
 
             }
         });
 
         final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
         AdView mAdView = (AdView) root.findViewById(R.id.adView);
         // Create an ad request. Check logcat output for the hashed device ID to

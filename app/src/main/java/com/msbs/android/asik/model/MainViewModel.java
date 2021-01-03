@@ -14,7 +14,7 @@ public class MainViewModel extends AndroidViewModel {
     //Constant for logging
     private static final String TAG = MainViewModel.class.getSimpleName();
 
-    private LiveData<List<Story>> tasks;
+    private final LiveData<List<Story>> tasks;
 
     public MainViewModel(@NonNull Application application) {
         super(application);

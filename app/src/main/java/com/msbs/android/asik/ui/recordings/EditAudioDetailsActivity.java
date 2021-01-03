@@ -27,7 +27,6 @@ import com.msbs.android.asik.model.Story;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 
 public class EditAudioDetailsActivity extends AppCompatActivity {
@@ -59,7 +58,7 @@ public class EditAudioDetailsActivity extends AppCompatActivity {
     // Constant for date format
     private static final String DATE_FORMAT = "MM/dd/yyy";
     // Date formatter
-    private SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT, Locale.getDefault());
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT, Locale.getDefault());
 
     Button mButton;
     Button mFavoriteButton;
@@ -147,10 +146,6 @@ setActionBarTitle("Edit Your Story");
         super.onSaveInstanceState(outState);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
 
     public void queryFavorites(){
         LiveData<Favorites> currentId = mDb.favoritesDao().loadFavoritesAgainById(mTaskId);

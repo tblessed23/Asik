@@ -8,9 +8,9 @@ import androidx.lifecycle.Observer;
 
 public class DebouncedLiveData<T> extends MediatorLiveData<T> {
 
-    private LiveData<T> mSource;
-    private int mDuration;
-    private Runnable debounceRunnable = new Runnable() {
+    private final LiveData<T> mSource;
+    private final int mDuration;
+    private final Runnable debounceRunnable = new Runnable() {
         @Override
         public void run() {
             DebouncedLiveData.this.postValue(mSource.getValue());

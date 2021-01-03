@@ -17,7 +17,7 @@ public class FavoritesViewModel extends AndroidViewModel {
 
     //Constant for logging
     private static final String TAG = MainViewModel.class.getSimpleName();
-    private LiveData<List<Favorites>> tasks;
+    private final LiveData<List<Favorites>> tasks;
 
     public FavoritesViewModel(@NonNull Application application) {
         super(application);

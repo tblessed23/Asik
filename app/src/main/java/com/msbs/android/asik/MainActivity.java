@@ -1,25 +1,26 @@
 package com.msbs.android.asik;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.transition.Explode;
+import android.transition.Slide;
+import android.view.Gravity;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.Menu;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import android.widget.Toast;;
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.auth.FirebaseUser;
 import com.msbs.android.asik.loggingin.LoggedInViewModel;
+import com.msbs.android.asik.loggingin.LoginActivity;
 import com.msbs.android.asik.loggingin.PreMainActivity;
 import com.msbs.android.asik.search.SearchActivity;
 
 import com.msbs.android.asik.ui.favorites.FavoritesActivity;
-import com.msbs.android.asik.ui.recordings.PlayAudioActivity;
 import com.msbs.android.asik.ui.recordings.RecordAudioActivity;
 
+import androidx.annotation.RequiresApi;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
@@ -39,10 +40,14 @@ public class MainActivity extends AppCompatActivity {
     private LoggedInViewModel loggedInViewModel;
     private TextView messageTextView;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setExitTransition(new Explode());
         setContentView(R.layout.activity_main);
+
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
@@ -25,7 +24,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
 
     // Class variables for the List that holds task data and the Context
     private List<Favorites> mTaskEntries;
-    private Context mContext;
+    private final Context mContext;
 
 
     /**
@@ -113,7 +112,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
 
 
     // Inner class for creating ViewHolders
-    class FavoritesViewHolder extends RecyclerView.ViewHolder {
+    static class FavoritesViewHolder extends RecyclerView.ViewHolder {
 
         // Class variables for the task description and priority TextViews
         TextView favoriteTitle;

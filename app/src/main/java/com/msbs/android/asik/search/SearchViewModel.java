@@ -14,13 +14,11 @@ public class SearchViewModel extends ViewModel {
 
 
     private static final String LOG_TAG = SearchViewModel.class.getSimpleName();
-    private StoryDao storyDao;
     public LiveData<PagedList<Story>> listAllStories;
     private LiveData<PagedList<Story>> listAllStoriesInDb;
     public MutableLiveData<String> filterStoryName = new MutableLiveData<>();
 
     public void initialFood(final StoryDao storyDao) {
-        this.storyDao = storyDao;
 
         PagedList.Config config = (new PagedList.Config.Builder())
                 .setPageSize(10)

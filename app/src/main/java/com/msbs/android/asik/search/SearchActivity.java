@@ -6,8 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -18,12 +17,9 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.msbs.android.asik.MainActivity;
 import com.msbs.android.asik.R;
 import com.msbs.android.asik.databinding.ActivitySearchBinding;
 import com.msbs.android.asik.model.AppDatabase;
-import com.msbs.android.asik.model.EmptyStateRecyclerView;
 import com.msbs.android.asik.model.Story;
 import com.msbs.android.asik.ui.NowPlayingActivity;
 

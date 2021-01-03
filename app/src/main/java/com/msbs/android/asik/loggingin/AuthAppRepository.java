@@ -20,7 +20,6 @@ import com.msbs.android.asik.model.User;
 public class AuthAppRepository {
 
     private Application application;
-    private AppDatabase mDB;
     private UserDao mUserDao;
 
 
@@ -36,7 +35,7 @@ public class AuthAppRepository {
         this.userLiveData = new MutableLiveData<>();
         this.loggedOutLiveData = new MutableLiveData<>();
 
-        mDB = AppDatabase.getInstance(application);
+        AppDatabase mDB = AppDatabase.getInstance(application);
         mUserDao = mDB.userDao();
 
 
@@ -50,15 +49,12 @@ public class AuthAppRepository {
     @RequiresApi(api = Build.VERSION_CODES.P)
     public void login(String email, String password) {
         firebaseAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(application.getMainExecutor(), new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            userLiveData.postValue(firebaseAuth.getCurrentUser());
+                .addOnCompleteListener(application.getMainExecutor(), task -> {
+                    if (task.isSuccessful()) {
+                        userLiveData.postValue(firebaseAuth.getCurrentUser());
 
-                        } else {
-                            Toast.makeText(application.getApplicationContext(), "Login Failure: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                        }
+                    } else {
+                        Toast.makeText(application.getApplicationContext(), "Login Failure: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }

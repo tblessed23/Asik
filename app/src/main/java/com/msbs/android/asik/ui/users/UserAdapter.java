@@ -28,13 +28,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.StoryViewHolde
     // final private ItemClickListener mItemClickListener;
     // Class variables for the List that holds task data and the Context
     private List<User> mUserEntries;
-    private Context mContext;
-
-    //   1
-    // Member variable for the Database
-    private AppDatabase mDb;
-
-
+    private final Context mContext;
 
 
     /**
@@ -83,7 +77,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.StoryViewHolde
         final String displayname = users.getDisplayname();
         final String displayemail = users.getDisplayemail();
 
-        mDb = AppDatabase.getInstance(mContext);
+        //   1
+        // Member variable for the Database
+        AppDatabase mDb = AppDatabase.getInstance(mContext);
 
         //Handle Editing Database Entry
         holder.editStoryDetails.setOnClickListener(new View.OnClickListener() {
@@ -151,7 +147,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.StoryViewHolde
     }
 
     // Inner class for creating ViewHolders
-    class StoryViewHolder extends RecyclerView.ViewHolder {
+    static class StoryViewHolder extends RecyclerView.ViewHolder {
 
         // Class variables for the task description and priority TextViews
         TextView user_display_email;

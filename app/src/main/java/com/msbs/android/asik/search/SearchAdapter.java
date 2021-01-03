@@ -1,39 +1,29 @@
 package com.msbs.android.asik.search;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Build;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
+
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.paging.PagedListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.msbs.android.asik.R;
-import com.msbs.android.asik.model.AppDatabase;
-import com.msbs.android.asik.model.Story;
-import com.msbs.android.asik.ui.NowPlayingActivity;
 
-import java.util.List;
+import com.msbs.android.asik.model.Story;
+
 
 public class SearchAdapter extends PagedListAdapter<Story, SearchAdapter.SearchViewHolder> {
     private static final String LOG_TAG = SearchAdapter.class.getSimpleName();
-    private Activity activity;
-    private SearchClickListener mSearchClickListener;
+    private final SearchClickListener mSearchClickListener;
 
 
 
     public SearchAdapter( Activity activity, SearchClickListener listener) {
         super(Story.DIFF_CALLBACK);
-        this.activity = activity;
         this.mSearchClickListener = listener;
     }
 
@@ -77,10 +67,9 @@ public class SearchAdapter extends PagedListAdapter<Story, SearchAdapter.SearchV
 
     public class SearchViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private TextView txtState;
-        private TextView txtCity;
-        private TextView txtTitle;
-        private TextView txtPlaySearch;
+        private final TextView txtState;
+        private final TextView txtCity;
+        private final TextView txtTitle;
 
 
         public SearchViewHolder(@NonNull View itemView) {
@@ -89,7 +78,7 @@ public class SearchAdapter extends PagedListAdapter<Story, SearchAdapter.SearchV
             txtTitle=itemView.findViewById(R.id.searchstorytitletext_view);
             txtState = itemView.findViewById(R.id.searchstorystatetext_view);
             txtCity= itemView.findViewById(R.id.searchstorycitytext_view);
-            txtPlaySearch= itemView.findViewById(R.id.search_play_textview);
+            TextView txtPlaySearch = itemView.findViewById(R.id.search_play_textview);
             itemView.setOnClickListener(this);
         }
 

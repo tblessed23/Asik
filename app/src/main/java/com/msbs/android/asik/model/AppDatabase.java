@@ -4,12 +4,10 @@ import android.content.Context;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.VisibleForTesting;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
-import androidx.room.migration.Migration;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.msbs.android.asik.loggingin.UserDao;
@@ -49,7 +47,7 @@ public abstract class AppDatabase extends RoomDatabase {
         return sInstance;
     }
 
-    private static RoomDatabase.Callback callback = new RoomDatabase.Callback() {
+    private static final RoomDatabase.Callback callback = new RoomDatabase.Callback() {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);

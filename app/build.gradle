@@ -4,14 +4,14 @@ apply plugin: 'com.google.gms.google-services'
 android {
     signingConfigs {
         config {
-            storeFile file('C:\\Users\\BenTheonna\\Documents\\Malachi Business Solutions\\Android Developer Course\\Asik\\keystore.jks')
+            storeFile file('keystore.jks')
             storePassword 'cs-193485'
             keyAlias 'asiktree'
             keyPassword 'cs-193485'
         }
     }
     compileSdkVersion 28
-    buildToolsVersion "30.0.1"
+//    buildToolsVersion "30.0.1"
 
     defaultConfig {
         applicationId "com.msbs.android.asik"

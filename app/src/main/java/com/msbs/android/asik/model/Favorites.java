@@ -5,12 +5,13 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import org.jetbrains.annotations.NotNull;
+
 @Entity(tableName = "favorites")
 public class Favorites {
 
 
     @PrimaryKey(autoGenerate =true)
-    @NonNull
     public int primaryId;
     @NonNull
     public String userfire;
@@ -19,13 +20,13 @@ public class Favorites {
 
 
     @Ignore
-    public Favorites(String userfire, String titleFavorites, String urlFavorites) {
+    public Favorites(@NotNull String userfire, String titleFavorites, String urlFavorites) {
         this.userfire = userfire;
         this.titleFavorites = titleFavorites;
         this.urlFavorites = urlFavorites;
     }
 
-    public Favorites(int primaryId, String userfire, String titleFavorites, String urlFavorites) {
+    public Favorites(int primaryId, @NotNull String userfire, String titleFavorites, String urlFavorites) {
         this.primaryId = primaryId;
         this.userfire = userfire;
         this.titleFavorites = titleFavorites;

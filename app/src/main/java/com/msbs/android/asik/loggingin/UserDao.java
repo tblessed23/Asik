@@ -8,7 +8,6 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.msbs.android.asik.model.Story;
 import com.msbs.android.asik.model.User;
 
 import java.util.List;

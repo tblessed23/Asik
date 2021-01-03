@@ -1,6 +1,6 @@
 package com.msbs.android.asik.ui.recordings;
 
-import android.app.Activity;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -20,7 +20,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.msbs.android.asik.R;
 import com.msbs.android.asik.model.AppDatabase;
 import com.msbs.android.asik.model.AppExecutors;
-import com.msbs.android.asik.model.Favorites;
 import com.msbs.android.asik.model.Story;
 
 import java.text.SimpleDateFormat;
@@ -37,9 +36,9 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
     // final private ItemClickListener mItemClickListener;
     // Class variables for the List that holds task data and the Context
     private List<Story> mStoryEntries;
-    private Context mContext;
+    private final Context mContext;
     // UserEditViewModel userModel;
-    private int mTaskId = DEFAULT_TASK_ID;
+    private final int mTaskId = DEFAULT_TASK_ID;
     // Constant for default task id to be used when not in update mode
     private static final int DEFAULT_TASK_ID = -1;
     // Member variable for the Database
@@ -47,7 +46,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
 
 
     // Date formatter
-    private SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT, Locale.getDefault());
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT, Locale.getDefault());
 
     /**
      * Constructor for the TaskAdapter that initializes the Context.
@@ -211,7 +210,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
     }
 
     // Inner class for creating ViewHolders
-    class StoryViewHolder extends RecyclerView.ViewHolder {
+    static class StoryViewHolder extends RecyclerView.ViewHolder {
 
         // Class variables for the task description and priority TextViews
         TextView titleView;

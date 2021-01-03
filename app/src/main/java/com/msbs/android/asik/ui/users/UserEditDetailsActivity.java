@@ -14,10 +14,9 @@ import android.widget.Toast;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.msbs.android.asik.MainActivity;
 import com.msbs.android.asik.R;
 import com.msbs.android.asik.loggingin.LoggedInViewModel;
 import com.msbs.android.asik.loggingin.UserViewModel;
@@ -25,8 +24,6 @@ import com.msbs.android.asik.loggingin.UserViewModelFactory;
 import com.msbs.android.asik.model.AppDatabase;
 import com.msbs.android.asik.model.AppExecutors;
 import com.msbs.android.asik.model.User;
-import com.msbs.android.asik.model.UserEditViewModel;
-import com.msbs.android.asik.model.UserEditViewModelFactory;
 
 public class UserEditDetailsActivity extends AppCompatActivity {
 
@@ -75,6 +72,10 @@ public class UserEditDetailsActivity extends AppCompatActivity {
         awesomeValidation.addValidation(this, R.id.filleAncestorLNdTextField2, "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
         awesomeValidation.addValidation(this, R.id.filledAncestorLNTextField3, "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
         awesomeValidation.addValidation(this, R.id.filledFamilyNameTextField4, "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
+        awesomeValidation.addValidation(this, R.id.filledTextFieldPhone, RegexTemplate.TELEPHONE, R.string.err_tel);
+        awesomeValidation.addValidation(this, R.id.filledTextFieldEmail, android.util.Patterns.EMAIL_ADDRESS, R.string.err_email);
+
+
 
         // Initialize member variable for the data base
         mDb = AppDatabase.getInstance(getApplicationContext());
@@ -133,17 +134,6 @@ setActionBarTitle("Edit Profile");
         outState.putInt(INSTANCE_TASK_ID, mTaskId);
         super.onSaveInstanceState(outState);
     }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-
-    }
-
-
-
-
 
     /**
      * initViews is called from onCreate to init the member variable views

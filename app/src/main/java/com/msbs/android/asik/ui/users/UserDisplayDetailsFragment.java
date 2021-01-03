@@ -20,8 +20,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.msbs.android.asik.MainActivity;
 import com.msbs.android.asik.R;
 import com.msbs.android.asik.loggingin.LoggedInViewModel;
-import com.msbs.android.asik.loggingin.UserViewModel;
-import com.msbs.android.asik.loggingin.UserViewModelFactory;
 import com.msbs.android.asik.model.AppDatabase;
 import com.msbs.android.asik.model.User;
 
@@ -36,10 +34,8 @@ public class UserDisplayDetailsFragment extends Fragment {
     private LoggedInViewModel loggedInViewModel;
     Button mButton;
     private TextView loggedInUserTextView;
-    // Member variables for the adapter and RecyclerView
-    private RecyclerView mRecyclerView;
     private UserAdapter mAdapter;
-    private List<User> mStoryEntries = new ArrayList<>();
+    private final List<User> mStoryEntries = new ArrayList<>();
     private Button logOutButton;
 
     /**
@@ -67,7 +63,8 @@ public class UserDisplayDetailsFragment extends Fragment {
                               Bundle savedInstanceState){
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.activity_user_display_details, container, false);
-        mRecyclerView = rootView.findViewById(R.id.recyclerViewTasks);
+        // Member variables for the adapter and RecyclerView
+        RecyclerView mRecyclerView = rootView.findViewById(R.id.recyclerViewTasks);
 
 
 

@@ -5,10 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.transition.Explode;
+import android.transition.Slide;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -21,31 +25,44 @@ import com.msbs.android.asik.model.AppDatabase;
 public class LoginActivity extends AppCompatActivity {
     private EditText emailEditText;
     private EditText passwordEditText;
-    private Button loginButton;
     private Button registerButton;
     Button registerButtonTwo;
-    private int mTaskId = DEFAULT_TASK_ID;
+    private final int mTaskId = DEFAULT_TASK_ID;
     // Constant for default task id to be used when not in update mode
     private static final int DEFAULT_TASK_ID = -1;
-    private AppDatabase mDb;
     private LoginRegisterViewModel loginRegisterViewModel;
 
-
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // set an exit transition
+        getWindow().setExitTransition(new Explode());
+
         setContentView(R.layout.activity_login);
 
+
+
+
         // Initialize member variable for the data base
-        mDb = AppDatabase.getInstance(getApplicationContext());
+        AppDatabase mDb = AppDatabase.getInstance(getApplicationContext());
 
         loginRegisterViewModel = ViewModelProviders.of(this).get(LoginRegisterViewModel.class);
         loginRegisterViewModel.getUserLiveData().observe(this, new Observer<FirebaseUser>() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onChanged(FirebaseUser firebaseUser) {
                 if (firebaseUser != null) {
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(intent);
+
+
+
+                    Bundle bundle = ActivityOptions
+                            .makeSceneTransitionAnimation(LoginActivity.this)
+                            .toBundle();
+
+
+                    startActivity(intent, bundle);
                 }
             }
         });
@@ -53,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
 
         emailEditText = findViewById(R.id.login_email);
         passwordEditText = findViewById(R.id.login_password);
-        loginButton = findViewById(R.id.login_button);
+        Button loginButton = findViewById(R.id.login_button);
 
 
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +88,8 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         setActionBarTitle("Login to Kisa");
+
+
     }
 
     public void setActionBarTitle(String title) {

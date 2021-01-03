@@ -24,6 +24,7 @@
         android:id="@+id/text_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/android_standard_sixteen"
         android:layout_marginStart="@dimen/standard_eightdp"
         android:layout_marginTop="@dimen/standard_eightdp"
         android:layout_marginEnd="@dimen/standard_eightdp"

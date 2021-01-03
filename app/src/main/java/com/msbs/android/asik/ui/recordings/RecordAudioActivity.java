@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
@@ -35,7 +34,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.msbs.android.asik.R;
-import com.msbs.android.asik.UserAudioDetailActivity;
 import com.msbs.android.asik.model.AppDatabase;
 import com.msbs.android.asik.model.AppExecutors;
 import com.msbs.android.asik.model.Story;
@@ -65,7 +63,7 @@ public class RecordAudioActivity extends AppCompatActivity implements
     private Button mSaveButton;
 
     private SeekBar mSeekBar;
-    private int mInterval = 10;
+    private final int mInterval = 10;
     private Handler mHandler;
     private Runnable mRunnable;
 
@@ -83,7 +81,7 @@ public class RecordAudioActivity extends AppCompatActivity implements
     int second = -1, minute, hour;
     int intDuration = 0;
 
-    private String practicekisa = customFilepath();
+    private final String practicekisa = customFilepath();
 
 
 
@@ -92,10 +90,7 @@ public class RecordAudioActivity extends AppCompatActivity implements
 
     private boolean isRecording = false;
 
-    //Firebase Instance Variable
-    private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
-    private FirebaseStorage mFirebaseStorage;
     private StorageReference mAudioStorageReference;
     private Uri audioUri;
 
@@ -107,7 +102,7 @@ public class RecordAudioActivity extends AppCompatActivity implements
     private AppDatabase mDb;
     Button mButton;
     TextInputEditText mEditT, mEditState;
-    private int mTaskId = DEFAULT_TASK_ID;
+    private final int mTaskId = DEFAULT_TASK_ID;
     // Constant for default task id to be used when not in update mode
     private static final int DEFAULT_TASK_ID = -1;
 
@@ -135,8 +130,9 @@ public class RecordAudioActivity extends AppCompatActivity implements
         mDb = AppDatabase.getInstance(getApplicationContext());
 
         //Intialize Firebase Components
-        mFirebaseAuth = FirebaseAuth.getInstance();
-        mFirebaseStorage = FirebaseStorage.getInstance();
+        //Firebase Instance Variable
+        FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
+        FirebaseStorage mFirebaseStorage = FirebaseStorage.getInstance();
 
         // Create a storage reference from our app
         mAudioStorageReference = mFirebaseStorage.getReference().child
@@ -163,7 +159,7 @@ public class RecordAudioActivity extends AppCompatActivity implements
         getSupportActionBar().setTitle(title);}
 
 
-    private TextWatcher loginTextWatcher = new TextWatcher() {
+    private final TextWatcher loginTextWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count,
                                       int after) {
@@ -351,7 +347,7 @@ public class RecordAudioActivity extends AppCompatActivity implements
 
     // Requesting permission to RECORD_AUDIO
     private boolean permissionToRecordAccepted = false;
-    private String [] permissions = {Manifest.permission.RECORD_AUDIO};
+    private final String [] permissions = {Manifest.permission.RECORD_AUDIO};
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[]

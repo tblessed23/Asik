@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.msbs.android.asik">
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_kisa"
@@ -11,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".ui.users.UserEditDetailsActivity"></activity>
+        <activity android:name=".ui.users.UserEditDetailsActivity"/>
         <activity android:name=".ui.users.UserDisplayDetailsActivity" android:parentActivityName=".MainActivity"/>
         <activity android:name=".loggingin.RegisterActivity" />
         <activity android:name=".loggingin.LoginActivity" />
@@ -31,7 +34,6 @@
         <activity android:name=".ui.recordings.SavedAudioActivity" />
         <activity android:name=".ui.favorites.FavoritesActivity" android:parentActivityName=".ui.recordings.SavedAudioActivity" />
         <activity android:name=".ui.NowPlayingActivity" />
-        <activity android:name=".ui.browseall.BrowseAllActivity" />
         <activity android:name=".ui.aboutus.AboutUsActivity" />
         <activity
             android:name=".MainActivity"
@@ -56,9 +58,7 @@
                 android:resource="@xml/favorites_widget_provider_info" />
         </receiver>
     </application>
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 
 </manifest>

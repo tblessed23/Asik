@@ -23,8 +23,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     private EditText emailEditText;
     private EditText passwordEditText;
-    private Button registerButton;
-    private AppDatabase mDb;
     private LoginRegisterViewModel loginRegisterViewModel;
 
 
@@ -35,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         // Initialize member variable for the data base
-        mDb = AppDatabase.getInstance(getApplicationContext());
+        AppDatabase mDb = AppDatabase.getInstance(getApplicationContext());
 
         loginRegisterViewModel = ViewModelProviders.of(this).get(LoginRegisterViewModel.class);
         loginRegisterViewModel.getUserLiveData().observe(this, new Observer<FirebaseUser>() {
@@ -50,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         emailEditText = findViewById(R.id.register_email);
         passwordEditText = findViewById(R.id.register_password);
-        registerButton = findViewById(R.id.register_button);
+        Button registerButton = findViewById(R.id.register_button);
 
 
         registerButton.setOnClickListener(new View.OnClickListener() {
